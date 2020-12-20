@@ -18,7 +18,7 @@ class item {
 		input.classList.add('inputItem');
 		input.disabled = true;
 
-		var edit = document.createElement('editButton');
+		var edit = document.createElement('Button');
 		edit.innerHTML = "EDIT";
 		edit.classList.add('editButton');
 
@@ -50,13 +50,12 @@ class item {
 
 		})
 
-		var del = document.createElement('deleteButton');
+		var del = document.createElement('Button');
 		del.innerHTML = "<img src=\"binImage.png\">";
 		del.classList.add('deleteButton');
 		del.onclick = () => {
-			alert("Hello");
+				itemDiv.remove();
 		}
-
 
 		container.appendChild(itemDiv);
 
