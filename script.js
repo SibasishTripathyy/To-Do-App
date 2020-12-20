@@ -16,7 +16,15 @@ class item {
 		input.type = "text";
 		input.value = itemName;
 		input.classList.add('inputItem');
-		input.disabled = true;
+		input.readOnly = true;
+
+		input.onclick = () => {
+			if (input.classList.contains('strikethrough')){
+				input.classList.remove('strikethrough');
+			} else {
+				input.classList.add('strikethrough');
+			}
+		}
 
 		var edit = document.createElement('Button');
 		edit.innerHTML = "EDIT";
@@ -33,16 +41,16 @@ class item {
 
 		edit.addEventListener('click', function(){
 
-			if (edit.innerHTML == "DONE" && input.disabled == false) {
+			if (edit.innerHTML == "DONE" && input.readOnly == false) {
 				edit.classList.remove('doneButton');
 				edit.classList.add('editButton');
 				edit.innerHTML = "EDIT";
-				input.disabled = true;
+				input.readOnly = true;
 				
 			} else {
 
 				edit.innerHTML = "DONE";
-				input.disabled = false;
+				input.readOnly = false;
 				edit.classList.remove('editButton');
 				edit.classList.add('doneButton');
 
