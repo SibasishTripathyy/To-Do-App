@@ -18,9 +18,51 @@ class item {
 		input.classList.add('inputItem');
 		input.disabled = true;
 
+		var edit = document.createElement('editButton');
+		edit.innerHTML = "EDIT";
+		edit.classList.add('editButton');
+
+		// edit.onclick = () => {
+		// 	edit.innerHTML = "<span id=\"done\">DONE</span>";
+		// 	input.disabled = false;
+		// 	edit.onclick = () => {
+		// 		edit.innerHTML = "EDIT";
+		// 		input.disabled = true;
+		// 	}
+		// }
+
+		edit.addEventListener('click', function(){
+
+			if (edit.innerHTML == "DONE" && input.disabled == false) {
+				edit.classList.remove('doneButton');
+				edit.classList.add('editButton');
+				edit.innerHTML = "EDIT";
+				input.disabled = true;
+				
+			} else {
+
+				edit.innerHTML = "DONE";
+				input.disabled = false;
+				edit.classList.remove('editButton');
+				edit.classList.add('doneButton');
+
+			}
+
+		})
+
+		var del = document.createElement('deleteButton');
+		del.innerHTML = "<img src=\"binImage.png\">";
+		del.classList.add('deleteButton');
+		del.onclick = () => {
+			alert("Hello");
+		}
+
+
 		container.appendChild(itemDiv);
 
 		itemDiv.appendChild(input);
+		itemDiv.appendChild(edit);
+		itemDiv.appendChild(del);
 
 	}
 }
