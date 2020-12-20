@@ -114,3 +114,7 @@ h1 {
 .deleteButton:hover{
 	opacity: 0.7;
 }
+
+.strikethrough {
+	text-decoration: line-through;
+}
